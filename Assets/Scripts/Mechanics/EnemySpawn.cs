@@ -1,7 +1,6 @@
-﻿using System;
-using Core;
+﻿using Core;
+using Gameplay;
 using Models;
-using Models.Base;
 using UnityEngine;
 
 namespace Mechanics
@@ -13,7 +12,8 @@ namespace Mechanics
 
         private void Start()
         {
-            _leveData = Simulation.GetModel<BaseModel>().level.Enemies;
+            var baseLevel = Simulation.GetModel<BaseModel>().level;
+            _leveData = baseLevel.Enemies;
             _currentEnemy = 0;
             Spawn();
         }
@@ -28,7 +28,7 @@ namespace Mechanics
         {
             if (_currentEnemy >= _leveData.Length)
                 return;
-            
+
             var enemy = _leveData[_currentEnemy];
             var obj = Instantiate(enemy, transform.position, Quaternion.identity);
             obj.transform.SetParent(transform);

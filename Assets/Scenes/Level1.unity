@@ -952,8 +952,9 @@ GameObject:
   - component: {fileID: 141084650}
   - component: {fileID: 141084649}
   - component: {fileID: 141084648}
+  - component: {fileID: 141084652}
   m_Layer: 5
-  m_Name: UI
+  m_Name: UI Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1017,7 +1018,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -35050101
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &141084651
@@ -1041,6 +1042,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &141084652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141084647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b732083675144118058798a9c68d1a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 852867979}
+  - {fileID: 1853598973}
 --- !u!1 &222913117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,6 +2335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseModel:
     player: {fileID: 878048087}
+    UIController: {fileID: 141084652}
     enemyGunTarget: {fileID: 1708053822}
     enemyPathTarget: {fileID: 894993745}
     level:

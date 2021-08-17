@@ -21,9 +21,7 @@ namespace Mechanics
                 if (_characterShoot)
                 {
                     var target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    
                     _characterShoot.Shoot(target);
-
                 }
             }
         }

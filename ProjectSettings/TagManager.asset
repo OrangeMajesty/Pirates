@@ -51,3 +51,6 @@ TagManager:
   - name: Water
     uniqueID: 3778367415
     locked: 0
+  - name: UI Panels
+    uniqueID: 4259917195
+    locked: 0
