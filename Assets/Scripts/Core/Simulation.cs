@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Core
@@ -17,7 +16,6 @@ namespace Core
             if (!_eventPool.TryGetValue(typeof(T), out pool))
             {
                 pool = new Stack<Event>(4);
-                //pool.Push(new T());
                 _eventPool[typeof(T)] = pool;
             }
 
@@ -30,24 +28,11 @@ namespace Core
         public static void Tick()
         {
             var time = Time.time;
-            //var excutedEvensCount = 0;
-
             while (_eventQueue.Count > 0 && _eventQueue.Peek().tick <= time)
             {
                 var ev = _eventQueue.Pop();
-                //var tick = ev.tick;
                 ev.ExecuteEvent();
-
-                /*if (ev.tick == tick)
-                {
-                    ev.CleanUp();
-                }
-                else
-                {
-                    // Событие было переподписано
-                }*/
             }
-            //Debug.Log(_eventQueue.Count);
         }
         
         // queue

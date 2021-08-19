@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Core;
 using Models;
 using UnityEngine;
@@ -60,14 +59,12 @@ namespace Mechanics
         {
             while (isAttacking)
             {
-                _gunShoot.Shoot(_targetGun.position, transform.tag);
-                yield return new WaitForSeconds(2f);
+                var target = Trajectory.GetTarget(transform.position, _targetGun.position, 284, 148);
+                Debug.Log(target);
+                if (target != Vector3.zero)
+                    _gunShoot.Shoot(target, transform.tag);
+                yield return null;
             }
-            //IsAttacking = true;
-            //if (!IsAttacking)
-                //yield break;
-            
-           
         }
     }
 }

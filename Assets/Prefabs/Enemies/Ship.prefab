@@ -181,6 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttacking: 1
   speedMove: 0.08
+  testSelected: 148
+  sd: 284
 --- !u!50 &2610981810243370003
 Rigidbody2D:
   serializedVersion: 4
