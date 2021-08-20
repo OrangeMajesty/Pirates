@@ -8,14 +8,11 @@ namespace Gameplay
     public class CharacterDeath : Simulation.Event<CharacterDeath>
     {
         public GameObject Character;
-        private UIController _uiController;
         private BaseLevel _baseLevel;
         private BaseModel _baseModel;
         public override void Execute()
         {
             _baseModel = Simulation.GetModel<BaseModel>();
-
-            _uiController = _baseModel.UIController;
             _baseLevel = _baseModel.level;
             
             if (Character.CompareTag("Player"))

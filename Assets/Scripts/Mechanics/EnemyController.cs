@@ -60,9 +60,12 @@ namespace Mechanics
             while (isAttacking)
             {
                 var target = Trajectory.GetTarget(transform.position, _targetGun.position, 284, 148);
-                Debug.Log(target);
                 if (target != Vector3.zero)
-                    _gunShoot.Shoot(target, transform.tag);
+                {
+                    var targetWithError = Trajectory.AddError(target, 250f);
+                    _gunShoot.Shoot(targetWithError, transform.tag);
+
+                }
                 yield return null;
             }
         }

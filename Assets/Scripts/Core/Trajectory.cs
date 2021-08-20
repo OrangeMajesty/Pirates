@@ -36,5 +36,15 @@ namespace Core
 
             return launchPoint + new Vector3(dir.x * dx1, dy1, dir.y * dx1);
         }
+
+        public static Vector3 AddError(Vector3 target, float error)
+        {
+            var pos = target;
+
+            pos.x = Random.Range(pos.x - error, pos.x + error);
+            pos.y = Random.Range(pos.y - error, pos.y + error);
+
+            return pos;
+        }
     }
 }

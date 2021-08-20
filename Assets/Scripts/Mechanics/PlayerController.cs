@@ -1,7 +1,4 @@
-﻿using System;
-using Core;
-using Gameplay;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Mechanics
 {
@@ -14,15 +11,12 @@ namespace Mechanics
             _characterShoot = GetComponentInChildren<GunShoot>();
         }
 
-        private void Update()
+        public void Shoot()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (_characterShoot)
             {
-                if (_characterShoot)
-                {
-                    var target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    _characterShoot.Shoot(target);
-                }
+                var target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                _characterShoot.Shoot(target);
             }
         }
     }
